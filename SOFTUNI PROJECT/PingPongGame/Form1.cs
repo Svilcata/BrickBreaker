@@ -19,11 +19,13 @@ namespace PingPongGame
 
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");//Add sound directory from here and sp.Play(); & sp.PlayLooping();--->>> to play sound
+        
+        
+
         public int speed_left = 4;   //speed of the ball
         public int speed_top = 4;
         public int points = 0; //scored points
         
-
 
         #region Body
         public Form1()
