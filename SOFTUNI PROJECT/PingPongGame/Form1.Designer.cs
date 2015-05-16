@@ -49,7 +49,7 @@
             this.playground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.playground.Location = new System.Drawing.Point(0, 0);
             this.playground.Name = "playground";
-            this.playground.Size = new System.Drawing.Size(446, 391);
+            this.playground.Size = new System.Drawing.Size(1068, 590);
             this.playground.TabIndex = 0;
             this.playground.Paint += new System.Windows.Forms.PaintEventHandler(this.playground_Paint);
             // 
@@ -85,8 +85,9 @@
             // 
             // racket
             // 
+            this.racket.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.racket.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.racket.Location = new System.Drawing.Point(115, 332);
+            this.racket.Location = new System.Drawing.Point(415, 558);
             this.racket.Name = "racket";
             this.racket.Size = new System.Drawing.Size(200, 20);
             this.racket.TabIndex = 1;
@@ -102,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 391);
+            this.ClientSize = new System.Drawing.Size(1068, 590);
             this.Controls.Add(this.playground);
             this.Name = "Form1";
             this.Text = "Form1";
