@@ -25,7 +25,7 @@ namespace PingPongGame
         
 
 
-        #region MainLogic
+        #region Body
         public Form1()
         {
             InitializeComponent();
