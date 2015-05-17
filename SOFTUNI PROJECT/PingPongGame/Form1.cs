@@ -17,10 +17,10 @@ namespace PingPongGame
 
     public partial class Form1 : Form
     {
-
+        
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         private SoundPlayer _soundPlayer;
-
+        
 
         public int speed_left = 4;   //speed of the ball
         public int speed_top = 4;
@@ -93,13 +93,24 @@ namespace PingPongGame
             }
         }
         #endregion
-        protected override bool ProcessDialogKey(Keys keyData)
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            Form2 f2 = new Form2();
+            Cursor.Show();
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
             {
-                this.Close();
-                return true;
+                Cursor.Show();
+                timer1.Enabled = !timer1.Enabled;
+                
+                f2.Show();
+                
+                //return true;
             }
+            //return base.ProcessDialogKey(keyData);
+            
+            
+        
             if (Form.ModifierKeys == Keys.None && keyData == Keys.P)
             {
                 timer1.Enabled = !timer1.Enabled;
@@ -121,7 +132,7 @@ namespace PingPongGame
                 }
             }
 
-            return base.ProcessDialogKey(keyData);
+            return true;
 
         }
 
@@ -148,21 +159,7 @@ namespace PingPongGame
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            if (musicOn == false)
-            {
-                _soundPlayer.PlayLooping();
-                musicOn = true;
-            }
-            else
-            {
-                _soundPlayer.Stop();
-                musicOn = false;
-            }
-
-        }
+        
 
         private void pause_Click(object sender, EventArgs e)
         {
