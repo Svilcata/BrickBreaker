@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech.Synthesis;
+using System.Media;
 
 
 namespace PingPongGame
@@ -18,13 +19,13 @@ namespace PingPongGame
     {
 
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
-        System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");//Add sound directory from here and sp.Play(); & sp.PlayLooping();--->>> to play sound
-        
+        private SoundPlayer _soundPlayer;
         
 
         public int speed_left = 4;   //speed of the ball
         public int speed_top = 4;
         public int points = 0; //scored points
+        public bool musicOn = false;
         
 
         #region Body
@@ -32,11 +33,14 @@ namespace PingPongGame
         {
             InitializeComponent();
             timer1.Enabled = true;
-            Cursor.Hide();
+            //Cursor.Hide();
             this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;  //Bring the form to the front
             this.Bounds = Screen.PrimaryScreen.Bounds;  //Make it fullscreen
             racket.Top = playground.Bottom - (playground.Bottom / 10);  //set the position of the racket
+            mute.Top = playground.Top - (playground.Top / 10);
+            mute.Left = playground.Right - 100;
+            _soundPlayer = new SoundPlayer("background.wav");
             
         }
 
@@ -47,6 +51,7 @@ namespace PingPongGame
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             racket.Left = Cursor.Position.X - (racket.Width / 2); //Set the center of the racket to the position of the cursor
             ball.Left += speed_left;
             ball.Top += speed_top;
@@ -75,7 +80,7 @@ namespace PingPongGame
             if (ball.Bottom >= playground.Bottom)
             {
                 timer1.Enabled = false;       //ball is out -> Game over!
-
+                _soundPlayer.Stop();
             }
         }
         #endregion
@@ -103,8 +108,30 @@ namespace PingPongGame
         public static void Speaker(string message, VoiceGender voiceGender)
         {
 
-            synth.SelectVoiceByHints(voiceGender);
-            synth.Speak(message);
+           
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+
+        }      
+
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            if (musicOn == false)
+            {
+                _soundPlayer.PlayLooping();
+                musicOn = true;
+            }
+            else
+            {
+                _soundPlayer.Stop();
+                musicOn = false;
+            }
+            
         }
         
     }

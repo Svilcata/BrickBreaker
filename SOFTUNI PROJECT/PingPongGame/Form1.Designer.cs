@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.playground = new System.Windows.Forms.Panel();
+            this.mute = new System.Windows.Forms.Button();
             this.points_lbl = new System.Windows.Forms.Label();
             this.score_lbl = new System.Windows.Forms.Label();
             this.ball = new System.Windows.Forms.PictureBox();
@@ -42,16 +44,29 @@
             // 
             // playground
             // 
-            this.playground.Controls.Add(this.points_lbl);
-            this.playground.Controls.Add(this.score_lbl);
             this.playground.Controls.Add(this.ball);
             this.playground.Controls.Add(this.racket);
+            this.playground.Controls.Add(this.mute);
+            this.playground.Controls.Add(this.points_lbl);
+            this.playground.Controls.Add(this.score_lbl);
             this.playground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.playground.Location = new System.Drawing.Point(0, 0);
             this.playground.Name = "playground";
             this.playground.Size = new System.Drawing.Size(1068, 590);
             this.playground.TabIndex = 0;
             this.playground.Paint += new System.Windows.Forms.PaintEventHandler(this.playground_Paint);
+            // 
+            // mute
+            // 
+            this.mute.BackColor = System.Drawing.Color.Transparent;
+            this.mute.Image = ((System.Drawing.Image)(resources.GetObject("mute.Image")));
+            this.mute.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mute.Location = new System.Drawing.Point(991, 12);
+            this.mute.Name = "mute";
+            this.mute.Size = new System.Drawing.Size(65, 65);
+            this.mute.TabIndex = 6;
+            this.mute.UseVisualStyleBackColor = false;
+            this.mute.Click += new System.EventHandler(this.button1_Click);
             // 
             // points_lbl
             // 
@@ -107,6 +122,7 @@
             this.Controls.Add(this.playground);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.playground.ResumeLayout(false);
             this.playground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
@@ -123,6 +139,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label points_lbl;
         private System.Windows.Forms.Label score_lbl;
+        private System.Windows.Forms.Button mute;
     }
 }
 
