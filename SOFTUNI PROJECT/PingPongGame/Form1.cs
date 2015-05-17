@@ -124,6 +124,12 @@ namespace PingPongGame
             */
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape) // Help Menu
             {
+                if (musicOn)
+                {
+                    _soundPlayer.Stop();
+                    musicOff_lbl.Visible = true;
+                    musicOn_lbl.Visible = false;
+                }
                 timer1.Enabled = false;
                 Cursor.Show();
                 resumeButton_lbl.Visible = true;
@@ -179,9 +185,6 @@ namespace PingPongGame
 
         }
 
-
-
-
         private void pause_Click(object sender, EventArgs e)
         {
 
@@ -224,6 +227,13 @@ namespace PingPongGame
             resumeButton_lbl.Visible = false;
             musicButton_lbl.Visible = false;
             exitButton_lbl.Visible = false;
+            if (musicOn)
+            {
+                musicOn_lbl.Visible = true;
+                musicOff_lbl.Visible = false;
+                _soundPlayer.PlayLooping();
+            }
+
         }
 
         private void musicButton_lbl_Click(object sender, EventArgs e)
