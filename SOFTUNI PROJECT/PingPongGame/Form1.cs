@@ -17,10 +17,10 @@ namespace PingPongGame
 
     public partial class Form1 : Form
     {
-        
+
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         private SoundPlayer _soundPlayer;
-        
+
 
         public int speed_left = 4;   //speed of the ball
         public int speed_top = 4;
@@ -43,12 +43,24 @@ namespace PingPongGame
             musicOff_lbl.Left = playground.Right - 110;
             musicOn_lbl.Top = playground.Top - (playground.Top / 10);
             musicOn_lbl.Left = playground.Right - 110;
-            _soundPlayer = new SoundPlayer("background.wav");
             musicOn_lbl.Visible = false;
             musicOff_lbl.Visible = true;
+
+            _soundPlayer = new SoundPlayer("background.wav");
+
             pause_lbl.Top = playground.Height / 2 - pause_lbl.Height / 2;
             pause_lbl.Left = playground.Width / 2 - pause_lbl.Width / 2;
             pause_lbl.Visible = false;
+
+            resumeButton_lbl.Visible = false;
+            resumeButton_lbl.Top = (playground.Height / 2 - resumeButton_lbl.Height / 2) - 50;
+            resumeButton_lbl.Left = playground.Width / 2 - resumeButton_lbl.Width / 2;
+            musicButton_lbl.Visible = false;
+            musicButton_lbl.Top = playground.Height / 2 - musicButton_lbl.Height / 2;
+            musicButton_lbl.Left = playground.Width / 2 - musicButton_lbl.Width / 2;
+            exitButton_lbl.Visible = false;
+            exitButton_lbl.Top = (playground.Height / 2 - exitButton_lbl.Height / 2) + 50;
+            exitButton_lbl.Left = (playground.Width / 2 - exitButton_lbl.Width / 2);
 
 
         }
@@ -64,7 +76,7 @@ namespace PingPongGame
             racket.Left = Cursor.Position.X - (racket.Width / 2); //Set the center of the racket to the position of the cursor
             ball.Left += speed_left;
             ball.Top += speed_top;
-            if (ball.Bottom >= racket.Top && ball.Bottom <= racket.Bottom && ball.Left >= racket.Left && ball.Right <= racket.Right)
+            if (ball.Bottom >= racket.Top && ball.Bottom <= racket.Bottom && ball.Right >= racket.Left && ball.Left <= racket.Right)
             {
                 speed_top += 2;
                 speed_left += 2;
@@ -96,27 +108,36 @@ namespace PingPongGame
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            /*
             Form2 f2 = new Form2();
             Cursor.Show();
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
             {
                 Cursor.Show();
                 timer1.Enabled = !timer1.Enabled;
-                
+
                 f2.Show();
-                
+
                 //return true;
             }
             //return base.ProcessDialogKey(keyData);
-            
-            
-        
-            if (Form.ModifierKeys == Keys.None && keyData == Keys.P)
+            */
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape) // Help Menu
+            {
+                timer1.Enabled = false;
+                Cursor.Show();
+                resumeButton_lbl.Visible = true;
+                musicButton_lbl.Visible = true;
+                exitButton_lbl.Visible = true;
+            }
+
+
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.P) // Pausing the game
             {
                 timer1.Enabled = !timer1.Enabled;
                 pause_lbl.Visible = !pause_lbl.Visible;
             }
-            if (Form.ModifierKeys == Keys.None && keyData == Keys.M)
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.M) // Music On/Off
             {
                 musicOff_lbl.Visible = !musicOff_lbl.Visible;
                 musicOn = !musicOn;
@@ -159,7 +180,7 @@ namespace PingPongGame
         }
 
 
-        
+
 
         private void pause_Click(object sender, EventArgs e)
         {
@@ -174,6 +195,45 @@ namespace PingPongGame
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resumeButton_lbl_Click(object sender, EventArgs e) // Resume the game
+        {
+            timer1.Enabled = true;
+            Cursor.Hide();
+            resumeButton_lbl.Visible = false;
+            musicButton_lbl.Visible = false;
+            exitButton_lbl.Visible = false;
+        }
+
+        private void musicButton_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitButton_lbl_Click(object sender, EventArgs e) // Exit the game
+        {
+            this.Close();
         }
 
     }

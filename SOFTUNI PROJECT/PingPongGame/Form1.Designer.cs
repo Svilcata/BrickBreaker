@@ -30,14 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.playground = new System.Windows.Forms.Panel();
-            this.musicOn_lbl = new System.Windows.Forms.Label();
-            this.musicOff_lbl = new System.Windows.Forms.Label();
             this.pause_lbl = new System.Windows.Forms.Label();
             this.ball = new System.Windows.Forms.PictureBox();
             this.racket = new System.Windows.Forms.PictureBox();
             this.points_lbl = new System.Windows.Forms.Label();
             this.score_lbl = new System.Windows.Forms.Label();
+            this.musicOn_lbl = new System.Windows.Forms.Label();
+            this.musicOff_lbl = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.resumeButton_lbl = new System.Windows.Forms.Button();
+            this.musicButton_lbl = new System.Windows.Forms.Button();
+            this.exitButton_lbl = new System.Windows.Forms.Button();
             this.playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
@@ -45,6 +48,9 @@
             // 
             // playground
             // 
+            this.playground.Controls.Add(this.exitButton_lbl);
+            this.playground.Controls.Add(this.musicButton_lbl);
+            this.playground.Controls.Add(this.resumeButton_lbl);
             this.playground.Controls.Add(this.pause_lbl);
             this.playground.Controls.Add(this.ball);
             this.playground.Controls.Add(this.racket);
@@ -58,30 +64,6 @@
             this.playground.Size = new System.Drawing.Size(1068, 590);
             this.playground.TabIndex = 0;
             this.playground.Paint += new System.Windows.Forms.PaintEventHandler(this.playground_Paint);
-            // 
-            // musicOn_lbl
-            // 
-            this.musicOn_lbl.AutoSize = true;
-            this.musicOn_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.musicOn_lbl.Location = new System.Drawing.Point(947, 12);
-            this.musicOn_lbl.Name = "musicOn_lbl";
-            this.musicOn_lbl.Size = new System.Drawing.Size(99, 24);
-            this.musicOn_lbl.TabIndex = 9;
-            this.musicOn_lbl.Text = "Music: ON";
-            this.musicOn_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.musicOn_lbl.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // musicOff_lbl
-            // 
-            this.musicOff_lbl.AutoSize = true;
-            this.musicOff_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.musicOff_lbl.Location = new System.Drawing.Point(947, 12);
-            this.musicOff_lbl.Name = "musicOff_lbl";
-            this.musicOff_lbl.Size = new System.Drawing.Size(109, 24);
-            this.musicOff_lbl.TabIndex = 8;
-            this.musicOff_lbl.Text = "Music: OFF";
-            this.musicOff_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.musicOff_lbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // pause_lbl
             // 
@@ -136,10 +118,67 @@
             this.score_lbl.TabIndex = 3;
             this.score_lbl.Text = "Score:";
             // 
+            // musicOn_lbl
+            // 
+            this.musicOn_lbl.AutoSize = true;
+            this.musicOn_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musicOn_lbl.Location = new System.Drawing.Point(947, 12);
+            this.musicOn_lbl.Name = "musicOn_lbl";
+            this.musicOn_lbl.Size = new System.Drawing.Size(99, 24);
+            this.musicOn_lbl.TabIndex = 9;
+            this.musicOn_lbl.Text = "Music: ON";
+            this.musicOn_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.musicOn_lbl.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // musicOff_lbl
+            // 
+            this.musicOff_lbl.AutoSize = true;
+            this.musicOff_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musicOff_lbl.Location = new System.Drawing.Point(947, 12);
+            this.musicOff_lbl.Name = "musicOff_lbl";
+            this.musicOff_lbl.Size = new System.Drawing.Size(109, 24);
+            this.musicOff_lbl.TabIndex = 8;
+            this.musicOff_lbl.Text = "Music: OFF";
+            this.musicOff_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.musicOff_lbl.Click += new System.EventHandler(this.label1_Click);
+            // 
             // timer1
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // resumeButton_lbl
+            // 
+            this.resumeButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resumeButton_lbl.Location = new System.Drawing.Point(453, 175);
+            this.resumeButton_lbl.Name = "resumeButton_lbl";
+            this.resumeButton_lbl.Size = new System.Drawing.Size(150, 50);
+            this.resumeButton_lbl.TabIndex = 10;
+            this.resumeButton_lbl.Text = "Resume";
+            this.resumeButton_lbl.UseVisualStyleBackColor = true;
+            this.resumeButton_lbl.Click += new System.EventHandler(this.resumeButton_lbl_Click);
+            // 
+            // musicButton_lbl
+            // 
+            this.musicButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musicButton_lbl.Location = new System.Drawing.Point(453, 224);
+            this.musicButton_lbl.Name = "musicButton_lbl";
+            this.musicButton_lbl.Size = new System.Drawing.Size(150, 50);
+            this.musicButton_lbl.TabIndex = 11;
+            this.musicButton_lbl.Text = "Music";
+            this.musicButton_lbl.UseVisualStyleBackColor = true;
+            this.musicButton_lbl.Click += new System.EventHandler(this.musicButton_lbl_Click);
+            // 
+            // exitButton_lbl
+            // 
+            this.exitButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton_lbl.Location = new System.Drawing.Point(453, 273);
+            this.exitButton_lbl.Name = "exitButton_lbl";
+            this.exitButton_lbl.Size = new System.Drawing.Size(150, 50);
+            this.exitButton_lbl.TabIndex = 12;
+            this.exitButton_lbl.Text = "EXIT :(";
+            this.exitButton_lbl.UseVisualStyleBackColor = true;
+            this.exitButton_lbl.Click += new System.EventHandler(this.exitButton_lbl_Click);
             // 
             // Form1
             // 
@@ -169,6 +208,9 @@
         private System.Windows.Forms.Label musicOff_lbl;
         private System.Windows.Forms.Label musicOn_lbl;
         public System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button exitButton_lbl;
+        private System.Windows.Forms.Button musicButton_lbl;
+        private System.Windows.Forms.Button resumeButton_lbl;
     }
 }
 

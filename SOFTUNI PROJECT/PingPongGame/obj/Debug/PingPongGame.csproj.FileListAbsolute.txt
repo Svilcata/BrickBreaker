@@ -50,3 +50,8 @@ C:\Users\Ivelin\Desktop\THE GAME\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\Pi
 C:\Users\Ivelin\Desktop\THE GAME\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.Properties.Resources.resources
 C:\Users\Ivelin\Desktop\THE GAME\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.csproj.GenerateResource.Cache
 C:\Users\Bobo\Desktop\BrickBreaker\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.Form2.resources
+C:\Users\Ivelin\Desktop\THE GAME\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.Form2.resources
+C:\Users\Ivelin\Desktop\THE GAME\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.exe.manifest
+C:\Users\Ivelin\Desktop\THE GAME\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.application
+C:\Users\Ivelin\Desktop\THE GAME\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.exe.manifest
+C:\Users\Ivelin\Desktop\THE GAME\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.application
