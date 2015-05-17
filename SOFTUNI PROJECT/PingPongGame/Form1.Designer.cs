@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.playground = new System.Windows.Forms.Panel();
+            this.ball = new System.Windows.Forms.PictureBox();
+            this.racket = new System.Windows.Forms.PictureBox();
             this.mute = new System.Windows.Forms.Button();
             this.points_lbl = new System.Windows.Forms.Label();
             this.score_lbl = new System.Windows.Forms.Label();
-            this.ball = new System.Windows.Forms.PictureBox();
-            this.racket = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pause_lbl = new System.Windows.Forms.Label();
             this.playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
@@ -44,6 +45,7 @@
             // 
             // playground
             // 
+            this.playground.Controls.Add(this.pause_lbl);
             this.playground.Controls.Add(this.ball);
             this.playground.Controls.Add(this.racket);
             this.playground.Controls.Add(this.mute);
@@ -55,39 +57,6 @@
             this.playground.Size = new System.Drawing.Size(1068, 590);
             this.playground.TabIndex = 0;
             this.playground.Paint += new System.Windows.Forms.PaintEventHandler(this.playground_Paint);
-            // 
-            // mute
-            // 
-            this.mute.BackColor = System.Drawing.Color.Transparent;
-            this.mute.Image = ((System.Drawing.Image)(resources.GetObject("mute.Image")));
-            this.mute.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.mute.Location = new System.Drawing.Point(991, 12);
-            this.mute.Name = "mute";
-            this.mute.Size = new System.Drawing.Size(65, 65);
-            this.mute.TabIndex = 6;
-            this.mute.UseVisualStyleBackColor = false;
-            this.mute.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // points_lbl
-            // 
-            this.points_lbl.AutoSize = true;
-            this.points_lbl.Font = new System.Drawing.Font("Pristina", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.points_lbl.Location = new System.Drawing.Point(135, 22);
-            this.points_lbl.Name = "points_lbl";
-            this.points_lbl.Size = new System.Drawing.Size(48, 63);
-            this.points_lbl.TabIndex = 4;
-            this.points_lbl.Text = "0";
-            this.points_lbl.Click += new System.EventHandler(this.points_lbl_Click);
-            // 
-            // score_lbl
-            // 
-            this.score_lbl.AutoSize = true;
-            this.score_lbl.Font = new System.Drawing.Font("Pristina", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.score_lbl.Location = new System.Drawing.Point(22, 22);
-            this.score_lbl.Name = "score_lbl";
-            this.score_lbl.Size = new System.Drawing.Size(132, 63);
-            this.score_lbl.TabIndex = 3;
-            this.score_lbl.Text = "Score:";
             // 
             // ball
             // 
@@ -109,10 +78,55 @@
             this.racket.TabStop = false;
             this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // mute
+            // 
+            this.mute.BackColor = System.Drawing.Color.Transparent;
+            this.mute.Image = ((System.Drawing.Image)(resources.GetObject("mute.Image")));
+            this.mute.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mute.Location = new System.Drawing.Point(991, 12);
+            this.mute.Name = "mute";
+            this.mute.Size = new System.Drawing.Size(65, 65);
+            this.mute.TabIndex = 6;
+            this.mute.UseVisualStyleBackColor = false;
+            this.mute.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // points_lbl
+            // 
+            this.points_lbl.AutoSize = true;
+            this.points_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.points_lbl.Location = new System.Drawing.Point(162, 22);
+            this.points_lbl.Name = "points_lbl";
+            this.points_lbl.Size = new System.Drawing.Size(52, 55);
+            this.points_lbl.TabIndex = 4;
+            this.points_lbl.Text = "0";
+            this.points_lbl.Click += new System.EventHandler(this.points_lbl_Click);
+            // 
+            // score_lbl
+            // 
+            this.score_lbl.AutoSize = true;
+            this.score_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score_lbl.Location = new System.Drawing.Point(22, 22);
+            this.score_lbl.Name = "score_lbl";
+            this.score_lbl.Size = new System.Drawing.Size(169, 55);
+            this.score_lbl.TabIndex = 3;
+            this.score_lbl.Text = "Score:";
+            // 
             // timer1
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pause_lbl
+            // 
+            this.pause_lbl.AutoSize = true;
+            this.pause_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pause_lbl.Location = new System.Drawing.Point(359, 245);
+            this.pause_lbl.Name = "pause_lbl";
+            this.pause_lbl.Size = new System.Drawing.Size(301, 74);
+            this.pause_lbl.TabIndex = 7;
+            this.pause_lbl.Text = "Game paused!\r\nPress \"P\" to resume";
+            this.pause_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pause_lbl.Click += new System.EventHandler(this.pause_Click);
             // 
             // Form1
             // 
@@ -140,6 +154,7 @@
         private System.Windows.Forms.Label points_lbl;
         private System.Windows.Forms.Label score_lbl;
         private System.Windows.Forms.Button mute;
+        private System.Windows.Forms.Label pause_lbl;
     }
 }
 

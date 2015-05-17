@@ -13,20 +13,20 @@ using System.Media;
 
 namespace PingPongGame
 {
-   
+
 
     public partial class Form1 : Form
     {
 
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         private SoundPlayer _soundPlayer;
-        
+
 
         public int speed_left = 4;   //speed of the ball
         public int speed_top = 4;
         public int points = 0; //scored points
         public bool musicOn = false;
-        
+
 
         #region Body
         public Form1()
@@ -41,7 +41,10 @@ namespace PingPongGame
             mute.Top = playground.Top - (playground.Top / 10);
             mute.Left = playground.Right - 100;
             _soundPlayer = new SoundPlayer("background.wav");
-            
+            pause_lbl.Top = playground.Height / 2 - pause_lbl.Height / 2;
+            pause_lbl.Left = playground.Width/2 - pause_lbl.Width/2;
+            pause_lbl.Visible = false;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -51,7 +54,7 @@ namespace PingPongGame
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+
             racket.Left = Cursor.Position.X - (racket.Width / 2); //Set the center of the racket to the position of the cursor
             ball.Left += speed_left;
             ball.Top += speed_top;
@@ -93,12 +96,11 @@ namespace PingPongGame
             }
             if (Form.ModifierKeys == Keys.None && keyData == Keys.P)
             {
-                timer1.Enabled = false;
-                MessageBox.Show("The game is paused \nHit Ok to continue");
-                timer1.Enabled = true;
+                timer1.Enabled = !timer1.Enabled;
+                pause_lbl.Visible = !pause_lbl.Visible;
             }
             return base.ProcessDialogKey(keyData);
-            
+
         }
 
         private void points_lbl_Click(object sender, EventArgs e)
@@ -110,23 +112,23 @@ namespace PingPongGame
         {
 
         }
- 
+
         public static void Speaker(string message, VoiceGender voiceGender)
         {
 
-           
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
 
-        }      
 
-        
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             if (musicOn == false)
             {
                 _soundPlayer.PlayLooping();
@@ -137,8 +139,13 @@ namespace PingPongGame
                 _soundPlayer.Stop();
                 musicOn = false;
             }
-            
+
         }
-        
+
+        private void pause_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
