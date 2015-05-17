@@ -33,17 +33,23 @@ namespace PingPongGame
         {
             InitializeComponent();
             timer1.Enabled = true;
-            //Cursor.Hide();
+            Cursor.Hide();
             this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;  //Bring the form to the front
             this.Bounds = Screen.PrimaryScreen.Bounds;  //Make it fullscreen
             racket.Top = playground.Bottom - (playground.Bottom / 10);  //set the position of the racket
-            mute.Top = playground.Top - (playground.Top / 10);
-            mute.Left = playground.Right - 100;
+
+            musicOff_lbl.Top = playground.Top - (playground.Top / 10);
+            musicOff_lbl.Left = playground.Right - 110;
+            musicOn_lbl.Top = playground.Top - (playground.Top / 10);
+            musicOn_lbl.Left = playground.Right - 110;
             _soundPlayer = new SoundPlayer("background.wav");
+            musicOn_lbl.Visible = false;
+            musicOff_lbl.Visible = true;
             pause_lbl.Top = playground.Height / 2 - pause_lbl.Height / 2;
-            pause_lbl.Left = playground.Width/2 - pause_lbl.Width/2;
+            pause_lbl.Left = playground.Width / 2 - pause_lbl.Width / 2;
             pause_lbl.Visible = false;
+
 
         }
 
@@ -99,6 +105,22 @@ namespace PingPongGame
                 timer1.Enabled = !timer1.Enabled;
                 pause_lbl.Visible = !pause_lbl.Visible;
             }
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.M)
+            {
+                musicOff_lbl.Visible = !musicOff_lbl.Visible;
+                musicOn = !musicOn;
+                musicOn_lbl.Visible = !musicOn_lbl.Visible;
+                if (musicOn == true)
+                {
+                    _soundPlayer.PlayLooping();
+                }
+                else
+                {
+                    _soundPlayer.Stop();
+                    musicOn = false;
+                }
+            }
+
             return base.ProcessDialogKey(keyData);
 
         }
@@ -143,6 +165,16 @@ namespace PingPongGame
         }
 
         private void pause_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
