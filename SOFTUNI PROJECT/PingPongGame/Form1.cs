@@ -91,6 +91,12 @@ namespace PingPongGame
                 this.Close();
                 return true;
             }
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.P)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("The game is paused \nHit Ok to continue");
+                timer1.Enabled = true;
+            }
             return base.ProcessDialogKey(keyData);
             
         }
