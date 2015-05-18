@@ -107,27 +107,14 @@ namespace PingPongGame
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            /*
-            Form2 f2 = new Form2();
-            Cursor.Show();
-            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
-            {
-                Cursor.Show();
-                timer1.Enabled = !timer1.Enabled;
-
-                f2.Show();
-
-                //return true;
-            }
-            //return base.ProcessDialogKey(keyData);
-            */
+            
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape) // Help Menu
             {
                 if (musicOn)
                 {
                     _soundPlayer.Stop();
-                    musicOff_lbl.Visible = true;
-                    musicOn_lbl.Visible = false;
+                    //musicOff_lbl.Visible = true;
+                    //musicOn_lbl.Visible = false;
                 }
                 timer1.Enabled = false;
                 Cursor.Show();
@@ -237,7 +224,23 @@ namespace PingPongGame
 
         private void musicButton_lbl_Click(object sender, EventArgs e)
         {
-
+            musicOff_lbl.Visible = !musicOff_lbl.Visible;
+            musicOn = !musicOn;
+            musicOn_lbl.Visible = !musicOn_lbl.Visible;
+            if (musicOn == true)
+            {
+                _soundPlayer.PlayLooping();
+            }
+            else
+            {
+                _soundPlayer.Stop();
+                musicOn = false;
+            }
+            timer1.Enabled = true;
+            Cursor.Hide();
+            resumeButton_lbl.Visible = false;
+            musicButton_lbl.Visible = false;
+            exitButton_lbl.Visible = false;
         }
 
         private void exitButton_lbl_Click(object sender, EventArgs e) // Exit the game
