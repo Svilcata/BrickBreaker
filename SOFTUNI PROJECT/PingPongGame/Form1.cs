@@ -21,8 +21,7 @@ namespace PingPongGame
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         private SoundPlayer _soundPlayer;
 
-
-        public int speed_left = 4;   //speed of the ball
+        public int speed_left = 4;  //speed of the ball
         public int speed_top = 4;
         public int points = 0; //scored points
         public bool musicOn = false;
@@ -98,7 +97,7 @@ namespace PingPongGame
             {
                 speed_top = -speed_top;
             }
-            if (ball.Bottom >= playground.Bottom)
+            if (ball.Top >= playground.Bottom)
             {
                 timer1.Enabled = false;       //ball is out -> Game over!
                 _soundPlayer.Stop();
@@ -244,6 +243,11 @@ namespace PingPongGame
         private void exitButton_lbl_Click(object sender, EventArgs e) // Exit the game
         {
             this.Close();
+        }
+
+        private void ball_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

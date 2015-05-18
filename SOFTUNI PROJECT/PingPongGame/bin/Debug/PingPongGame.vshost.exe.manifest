@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PingPongGame.exe" size="16800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PingPongGame.exe" size="17312">
       <assemblyIdentity name="PingPongGame" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/d+HDHKrrUV2xxaB/3MgIvX+XC8RhaRN0klK0g+Ye2M=</dsig:DigestValue>
+        <dsig:DigestValue>qyswYSgwdMc1dZV9wP4se1hpNlIZGnX+qd2eXwzWu9E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

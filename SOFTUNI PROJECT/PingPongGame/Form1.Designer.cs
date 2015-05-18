@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.playground = new System.Windows.Forms.Panel();
+            this.exitButton_lbl = new System.Windows.Forms.Button();
+            this.musicButton_lbl = new System.Windows.Forms.Button();
+            this.resumeButton_lbl = new System.Windows.Forms.Button();
             this.pause_lbl = new System.Windows.Forms.Label();
             this.ball = new System.Windows.Forms.PictureBox();
             this.racket = new System.Windows.Forms.PictureBox();
@@ -38,9 +41,6 @@
             this.musicOn_lbl = new System.Windows.Forms.Label();
             this.musicOff_lbl = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.resumeButton_lbl = new System.Windows.Forms.Button();
-            this.musicButton_lbl = new System.Windows.Forms.Button();
-            this.exitButton_lbl = new System.Windows.Forms.Button();
             this.playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
@@ -65,6 +65,39 @@
             this.playground.TabIndex = 0;
             this.playground.Paint += new System.Windows.Forms.PaintEventHandler(this.playground_Paint);
             // 
+            // exitButton_lbl
+            // 
+            this.exitButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton_lbl.Location = new System.Drawing.Point(453, 273);
+            this.exitButton_lbl.Name = "exitButton_lbl";
+            this.exitButton_lbl.Size = new System.Drawing.Size(150, 50);
+            this.exitButton_lbl.TabIndex = 12;
+            this.exitButton_lbl.Text = "EXIT :(";
+            this.exitButton_lbl.UseVisualStyleBackColor = true;
+            this.exitButton_lbl.Click += new System.EventHandler(this.exitButton_lbl_Click);
+            // 
+            // musicButton_lbl
+            // 
+            this.musicButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musicButton_lbl.Location = new System.Drawing.Point(453, 224);
+            this.musicButton_lbl.Name = "musicButton_lbl";
+            this.musicButton_lbl.Size = new System.Drawing.Size(150, 50);
+            this.musicButton_lbl.TabIndex = 11;
+            this.musicButton_lbl.Text = "Music";
+            this.musicButton_lbl.UseVisualStyleBackColor = true;
+            this.musicButton_lbl.Click += new System.EventHandler(this.musicButton_lbl_Click);
+            // 
+            // resumeButton_lbl
+            // 
+            this.resumeButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resumeButton_lbl.Location = new System.Drawing.Point(453, 175);
+            this.resumeButton_lbl.Name = "resumeButton_lbl";
+            this.resumeButton_lbl.Size = new System.Drawing.Size(150, 50);
+            this.resumeButton_lbl.TabIndex = 10;
+            this.resumeButton_lbl.Text = "Resume";
+            this.resumeButton_lbl.UseVisualStyleBackColor = true;
+            this.resumeButton_lbl.Click += new System.EventHandler(this.resumeButton_lbl_Click);
+            // 
             // pause_lbl
             // 
             this.pause_lbl.AutoSize = true;
@@ -85,6 +118,7 @@
             this.ball.Size = new System.Drawing.Size(42, 41);
             this.ball.TabIndex = 2;
             this.ball.TabStop = false;
+            this.ball.Click += new System.EventHandler(this.ball_Click);
             // 
             // racket
             // 
@@ -146,39 +180,6 @@
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // resumeButton_lbl
-            // 
-            this.resumeButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resumeButton_lbl.Location = new System.Drawing.Point(453, 175);
-            this.resumeButton_lbl.Name = "resumeButton_lbl";
-            this.resumeButton_lbl.Size = new System.Drawing.Size(150, 50);
-            this.resumeButton_lbl.TabIndex = 10;
-            this.resumeButton_lbl.Text = "Resume";
-            this.resumeButton_lbl.UseVisualStyleBackColor = true;
-            this.resumeButton_lbl.Click += new System.EventHandler(this.resumeButton_lbl_Click);
-            // 
-            // musicButton_lbl
-            // 
-            this.musicButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.musicButton_lbl.Location = new System.Drawing.Point(453, 224);
-            this.musicButton_lbl.Name = "musicButton_lbl";
-            this.musicButton_lbl.Size = new System.Drawing.Size(150, 50);
-            this.musicButton_lbl.TabIndex = 11;
-            this.musicButton_lbl.Text = "Music";
-            this.musicButton_lbl.UseVisualStyleBackColor = true;
-            this.musicButton_lbl.Click += new System.EventHandler(this.musicButton_lbl_Click);
-            // 
-            // exitButton_lbl
-            // 
-            this.exitButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton_lbl.Location = new System.Drawing.Point(453, 273);
-            this.exitButton_lbl.Name = "exitButton_lbl";
-            this.exitButton_lbl.Size = new System.Drawing.Size(150, 50);
-            this.exitButton_lbl.TabIndex = 12;
-            this.exitButton_lbl.Text = "EXIT :(";
-            this.exitButton_lbl.UseVisualStyleBackColor = true;
-            this.exitButton_lbl.Click += new System.EventHandler(this.exitButton_lbl_Click);
             // 
             // Form1
             // 
