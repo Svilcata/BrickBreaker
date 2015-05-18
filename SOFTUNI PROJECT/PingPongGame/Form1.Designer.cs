@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.playground = new System.Windows.Forms.Panel();
+            this.restartButton_lbl = new System.Windows.Forms.Button();
             this.exitButton_lbl = new System.Windows.Forms.Button();
             this.musicButton_lbl = new System.Windows.Forms.Button();
             this.resumeButton_lbl = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.musicOn_lbl = new System.Windows.Forms.Label();
             this.musicOff_lbl = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.restartButton_lbl = new System.Windows.Forms.Button();
             this.playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
@@ -66,6 +66,17 @@
             this.playground.Size = new System.Drawing.Size(1068, 590);
             this.playground.TabIndex = 0;
             this.playground.Paint += new System.Windows.Forms.PaintEventHandler(this.playground_Paint);
+            // 
+            // restartButton_lbl
+            // 
+            this.restartButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restartButton_lbl.Location = new System.Drawing.Point(453, 180);
+            this.restartButton_lbl.Name = "restartButton_lbl";
+            this.restartButton_lbl.Size = new System.Drawing.Size(150, 50);
+            this.restartButton_lbl.TabIndex = 13;
+            this.restartButton_lbl.Text = "Restart";
+            this.restartButton_lbl.UseVisualStyleBackColor = true;
+            this.restartButton_lbl.Click += new System.EventHandler(this.restartButton_lbl_Click);
             // 
             // exitButton_lbl
             // 
@@ -182,17 +193,6 @@
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // restartButton_lbl
-            // 
-            this.restartButton_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.restartButton_lbl.Location = new System.Drawing.Point(453, 180);
-            this.restartButton_lbl.Name = "restartButton_lbl";
-            this.restartButton_lbl.Size = new System.Drawing.Size(150, 50);
-            this.restartButton_lbl.TabIndex = 13;
-            this.restartButton_lbl.Text = "Restart";
-            this.restartButton_lbl.UseVisualStyleBackColor = true;
-            this.restartButton_lbl.Click += new System.EventHandler(this.restartBtn_lbl_Click);
             // 
             // Form1
             // 
