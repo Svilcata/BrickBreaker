@@ -21,6 +21,7 @@ namespace PingPongGame
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         private SoundPlayer _soundPlayer;
 
+        public int coordintes = 0;
         public int speed_left = RandomGenerator(-4, 4);  //speed of the ball
         public int speed_top = 4;
         public int points = 0; //scored points
@@ -122,6 +123,7 @@ namespace PingPongGame
 
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape) // Help Menu
             {
+                coordinates = Cursor.Position.X;
                 Cursor.Show();
                 if (musicOn)
                 {
@@ -222,6 +224,7 @@ namespace PingPongGame
 
         private void resumeButton_lbl_Click(object sender, EventArgs e) // Resume the game
         {
+            Point pt = new Point();
             timer1.Enabled = true;
             Cursor.Hide();
             resumeButton_lbl.Visible = false;
@@ -235,7 +238,7 @@ namespace PingPongGame
                 musicOff_lbl.Visible = false;
                 _soundPlayer.PlayLooping();
             }
-
+            Cursor.Position = pt;
         }
 
         private void musicButton_lbl_Click(object sender, EventArgs e)
