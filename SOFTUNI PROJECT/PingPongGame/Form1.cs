@@ -21,7 +21,7 @@ namespace PingPongGame
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         private SoundPlayer _soundPlayer;
 
-        public int speed_left = 4;  //speed of the ball
+        public int speed_left = RandomGenerator(-4, 4);  //speed of the ball
         public int speed_top = 4;
         public int points = 0; //scored points
         public bool musicOn = false;
@@ -52,8 +52,11 @@ namespace PingPongGame
             pause_lbl.Visible = false;
 
             resumeButton_lbl.Visible = false;
-            resumeButton_lbl.Top = (playground.Height / 2 - resumeButton_lbl.Height / 2) - 50;
+            resumeButton_lbl.Top = (playground.Height / 2 - resumeButton_lbl.Height / 2) - 100;
             resumeButton_lbl.Left = playground.Width / 2 - resumeButton_lbl.Width / 2;
+            restartButton_lbl.Visible = false;
+            restartButton_lbl.Top = (playground.Height / 2 - resumeButton_lbl.Height / 2) - 50;
+            restartButton_lbl.Left = playground.Width / 2 - resumeButton_lbl.Width / 2;
             musicButton_lbl.Visible = false;
             musicButton_lbl.Top = playground.Height / 2 - musicButton_lbl.Height / 2;
             musicButton_lbl.Left = playground.Width / 2 - musicButton_lbl.Width / 2;
@@ -107,7 +110,7 @@ namespace PingPongGame
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            
+
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape) // Help Menu
             {
                 if (musicOn)
@@ -119,6 +122,7 @@ namespace PingPongGame
                 timer1.Enabled = false;
                 Cursor.Show();
                 resumeButton_lbl.Visible = true;
+                restartButton_lbl.Visible = true;
                 musicButton_lbl.Visible = true;
                 exitButton_lbl.Visible = true;
             }
@@ -211,6 +215,7 @@ namespace PingPongGame
             timer1.Enabled = true;
             Cursor.Hide();
             resumeButton_lbl.Visible = false;
+            restartButton_lbl.Visible = false;
             musicButton_lbl.Visible = false;
             exitButton_lbl.Visible = false;
             if (musicOn)
@@ -241,6 +246,7 @@ namespace PingPongGame
             resumeButton_lbl.Visible = false;
             musicButton_lbl.Visible = false;
             exitButton_lbl.Visible = false;
+            restartButton_lbl.Visible = false;
         }
 
         private void exitButton_lbl_Click(object sender, EventArgs e) // Exit the game
@@ -251,6 +257,28 @@ namespace PingPongGame
         private void ball_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void restartButton_lbl_Click(object sender, EventArgs e)
+        {
+
+            ball.Top = RandomGenerator(50, 200);
+            ball.Left = RandomGenerator(0, 1000);
+            speed_left = RandomGenerator(-4, 4);
+            speed_top = 4;
+            points = 0;
+            timer1.Enabled = true;
+            resumeButton_lbl.Visible = false;
+            restartButton_lbl.Visible = false;
+            musicButton_lbl.Visible = false;
+            exitButton_lbl.Visible = false;
+            Cursor.Hide();
+        }
+        public static int RandomGenerator(int i, int p)
+        {
+            Random rnd = new Random();
+            int randomNumber = rnd.Next(i, p);
+            return randomNumber;
         }
 
     }
