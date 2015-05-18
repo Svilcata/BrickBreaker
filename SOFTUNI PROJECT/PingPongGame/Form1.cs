@@ -122,7 +122,7 @@ namespace PingPongGame
 
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape) // Help Menu
             {
-                
+                Cursor.Show();
                 if (musicOn)
                 {
                     _soundPlayer.Stop();
@@ -130,7 +130,7 @@ namespace PingPongGame
                     //musicOn_lbl.Visible = false;
                 }
                 timer1.Enabled = false;
-                Cursor.Show();
+               
                 resumeButton_lbl.Visible = true;
                 restartButton_lbl.Visible = true;
                 musicButton_lbl.Visible = true;
