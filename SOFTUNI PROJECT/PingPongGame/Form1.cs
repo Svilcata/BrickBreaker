@@ -21,7 +21,9 @@ namespace PingPongGame
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         private SoundPlayer _soundPlayer;
 
-        public int coordinаte = 0;
+        public int PadcoordinаteX = 0;
+        public int CursorcoordinаteY= 0;
+        public int CursorcoordinаteX = 0;
         public int speed_left = RandomGenerator(-4, 4);  //speed of the ball
         public int speed_top = 4;
         public int points = 0; //scored points
@@ -120,8 +122,8 @@ namespace PingPongGame
 
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape) // Help Menu
             {
-                coordinаte = Cursor.Position.X;
-
+                PadcoordinаteX = Cursor.Position.X;
+               
                 if (musicOn)
                 {
                     _soundPlayer.Stop();
@@ -221,7 +223,8 @@ namespace PingPongGame
 
         private void resumeButton_lbl_Click(object sender, EventArgs e) // Resume the game
         {
-            Point pt = new Point(coordinаte, 0);
+            CursorcoordinаteY = Cursor.Position.Y;
+            Point pt = new Point(PadcoordinаteX, CursorcoordinаteY);
             timer1.Enabled = true;
             Cursor.Hide();
             resumeButton_lbl.Visible = false;
@@ -240,7 +243,9 @@ namespace PingPongGame
 
         private void musicButton_lbl_Click(object sender, EventArgs e)
         {
-            Point pt = new Point(coordinаte, 0);
+            CursorcoordinаteY = Cursor.Position.Y;
+            CursorcoordinаteX = Cursor.Position.X;
+            Point pt = new Point(CursorcoordinаteX, CursorcoordinаteY);
             musicOff_lbl.Visible = !musicOff_lbl.Visible;
             musicOn = !musicOn;
             musicOn_lbl.Visible = !musicOn_lbl.Visible;
@@ -275,6 +280,8 @@ namespace PingPongGame
         private void restartButton_lbl_Click(object sender, EventArgs e)
         {
             Cursor.Hide();
+            CursorcoordinаteY = Cursor.Position.Y;
+            Point pt = new Point(PadcoordinаteX, CursorcoordinаteY);
             ball.Top = RandomGenerator(50, 200);
             ball.Left = RandomGenerator(0, 1000);
             speed_left = RandomGenerator(-4, 4);
