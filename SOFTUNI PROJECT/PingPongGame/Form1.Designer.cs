@@ -1,4 +1,4 @@
-﻿namespace PingPongGame
+namespace PingPongGame
 {
     partial class Form1
     {
@@ -42,6 +42,7 @@
             this.musicOn_lbl = new System.Windows.Forms.Label();
             this.musicOff_lbl = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.gameover_lbl = new System.Windows.Forms.Label();
             this.playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
@@ -49,6 +50,7 @@
             // 
             // playground
             // 
+            this.playground.Controls.Add(this.gameover_lbl);
             this.playground.Controls.Add(this.restartButton_lbl);
             this.playground.Controls.Add(this.exitButton_lbl);
             this.playground.Controls.Add(this.musicButton_lbl);
@@ -115,7 +117,7 @@
             // 
             this.pause_lbl.AutoSize = true;
             this.pause_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pause_lbl.Location = new System.Drawing.Point(359, 245);
+            this.pause_lbl.Location = new System.Drawing.Point(377, 249);
             this.pause_lbl.Name = "pause_lbl";
             this.pause_lbl.Size = new System.Drawing.Size(301, 74);
             this.pause_lbl.TabIndex = 7;
@@ -194,6 +196,16 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // gameover_lbl
+            // 
+            this.gameover_lbl.AutoSize = true;
+            this.gameover_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gameover_lbl.Location = new System.Drawing.Point(437, 74);
+            this.gameover_lbl.Name = "gameover_lbl";
+            this.gameover_lbl.Size = new System.Drawing.Size(190, 37);
+            this.gameover_lbl.TabIndex = 14;
+            this.gameover_lbl.Text = "Game Over!";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +238,6 @@
         private System.Windows.Forms.Button musicButton_lbl;
         private System.Windows.Forms.Button resumeButton_lbl;
         private System.Windows.Forms.Button restartButton_lbl;
+        private System.Windows.Forms.Label gameover_lbl;
     }
 }
-
