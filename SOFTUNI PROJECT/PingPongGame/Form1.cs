@@ -24,8 +24,8 @@ namespace PingPongGame
         public int PadcoordinаteX = 0;
         public int CursorcoordinаteY= 0;
         public int CursorcoordinаteX = 0;
-        public int speed_left = RandomGenerator(-4, 4);  //speed of the ball
-        public int speed_top = 4;
+        public double speed_left = RandomGenerator(-4, 4);  //speed of the ball
+        public double speed_top = 4;
         public int points = 0; //scored points
         public bool musicOn = false;
 
@@ -40,6 +40,14 @@ namespace PingPongGame
             this.TopMost = true;  //Bring the form to the front
             this.Bounds = Screen.PrimaryScreen.Bounds;  //Make it fullscreen
             racket.Top = playground.Bottom - (playground.Bottom / 10);  //set the position of the racket
+            brick11.Top = playground.Top + 100;
+            brick11.Left = playground.Left + 90;
+            brick12.Top = playground.Top + 100;
+            brick12.Left = playground.Left + 440;
+            brick13.Top = playground.Top + 100;
+            brick13.Left = playground.Left + 790;
+            brick14.Top = playground.Top + 100;
+            brick14.Left = playground.Left + 1140;
 
             musicOff_lbl.Top = playground.Top - (playground.Top / 10);
             musicOff_lbl.Left = playground.Right - 110;
@@ -80,12 +88,12 @@ namespace PingPongGame
         {
 
             racket.Left = Cursor.Position.X - (racket.Width / 2); //Set the center of the racket to the position of the cursor
-            ball.Left += speed_left;
-            ball.Top += speed_top;
+            ball.Left += (int)speed_left;
+            ball.Top += (int)speed_top;
             if (ball.Bottom >= racket.Top && ball.Bottom <= racket.Bottom && ball.Right >= racket.Left && ball.Left <= racket.Right)
             {
-                speed_top += 2;
-                speed_left += 2;
+                speed_top += 0.3;
+                speed_left += 1;
                 speed_top = -speed_top; //change the direction
                 points += 1;
                 points_lbl.Text = points.ToString();

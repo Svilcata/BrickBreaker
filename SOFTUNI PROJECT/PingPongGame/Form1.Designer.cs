@@ -37,6 +37,10 @@ namespace PingPongGame
             this.resumeButton_lbl = new System.Windows.Forms.Button();
             this.pause_lbl = new System.Windows.Forms.Label();
             this.racket = new System.Windows.Forms.PictureBox();
+            this.brick11 = new System.Windows.Forms.PictureBox();
+            this.brick12 = new System.Windows.Forms.PictureBox();
+            this.brick13 = new System.Windows.Forms.PictureBox();
+            this.brick14 = new System.Windows.Forms.PictureBox();
             this.points_lbl = new System.Windows.Forms.Label();
             this.score_lbl = new System.Windows.Forms.Label();
             this.musicOn_lbl = new System.Windows.Forms.Label();
@@ -58,6 +62,10 @@ namespace PingPongGame
             this.playground.Controls.Add(this.pause_lbl);
             this.playground.Controls.Add(this.ball);
             this.playground.Controls.Add(this.racket);
+            this.playground.Controls.Add(this.brick11);
+            this.playground.Controls.Add(this.brick12);
+            this.playground.Controls.Add(this.brick13);
+            this.playground.Controls.Add(this.brick14);
             this.playground.Controls.Add(this.points_lbl);
             this.playground.Controls.Add(this.score_lbl);
             this.playground.Controls.Add(this.musicOn_lbl);
@@ -220,6 +228,54 @@ namespace PingPongGame
             ((System.ComponentModel.ISupportInitialize)(this.racket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             this.ResumeLayout(false);
+            //
+            // Brick11
+            //
+            this.brick11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.brick11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.brick11.Location = new System.Drawing.Point(415, 558);
+            this.brick11.Name = "brick11";
+            this.brick11.Size = new System.Drawing.Size(200, 20);
+            this.brick11.TabIndex = 1;
+            this.brick11.TabStop = false;
+            //this.brick11.BringToFront = true;
+            //this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
+            //
+            // Brick12
+            //
+            this.brick12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.brick12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.brick12.Location = new System.Drawing.Point(415, 558);
+            this.brick12.Name = "brick12";
+            this.brick12.Size = new System.Drawing.Size(200, 20);
+            this.brick12.TabIndex = 1;
+            this.brick12.TabStop = false;
+            //this.brick11.BringToFront = true;
+            //this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
+            //
+            // Brick13
+            //
+            this.brick13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.brick13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.brick13.Location = new System.Drawing.Point(415, 558);
+            this.brick13.Name = "brick13";
+            this.brick13.Size = new System.Drawing.Size(200, 20);
+            this.brick13.TabIndex = 1;
+            this.brick13.TabStop = false;
+            //this.brick11.BringToFront = true;
+            //this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
+            //
+            // Brick14
+            //
+            this.brick14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.brick14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.brick14.Location = new System.Drawing.Point(415, 558);
+            this.brick14.Name = "brick14";
+            this.brick14.Size = new System.Drawing.Size(200, 20);
+            this.brick14.TabIndex = 1;
+            this.brick14.TabStop = false;
+            //this.brick11.BringToFront = true;
+            //this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
 
         }
 
@@ -227,6 +283,10 @@ namespace PingPongGame
 
         private System.Windows.Forms.Panel playground;
         private System.Windows.Forms.PictureBox racket;
+        private System.Windows.Forms.PictureBox brick11;
+        private System.Windows.Forms.PictureBox brick12;
+        private System.Windows.Forms.PictureBox brick13;
+        private System.Windows.Forms.PictureBox brick14;
         private OvalPictureBox ball;
         private System.Windows.Forms.Label points_lbl;
         private System.Windows.Forms.Label score_lbl;
