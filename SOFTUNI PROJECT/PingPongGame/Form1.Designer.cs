@@ -30,19 +30,19 @@ namespace PingPongGame
         {
             this.components = new System.ComponentModel.Container();
             this.playground = new System.Windows.Forms.Panel();
+            this.gameover_lbl = new System.Windows.Forms.Label();
             this.restartButton_lbl = new System.Windows.Forms.Button();
             this.exitButton_lbl = new System.Windows.Forms.Button();
             this.musicButton_lbl = new System.Windows.Forms.Button();
             this.resumeButton_lbl = new System.Windows.Forms.Button();
             this.pause_lbl = new System.Windows.Forms.Label();
-            this.ball = new System.Windows.Forms.PictureBox();
+            this.ball = new OvalPictureBox();
             this.racket = new System.Windows.Forms.PictureBox();
             this.points_lbl = new System.Windows.Forms.Label();
             this.score_lbl = new System.Windows.Forms.Label();
             this.musicOn_lbl = new System.Windows.Forms.Label();
             this.musicOff_lbl = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.gameover_lbl = new System.Windows.Forms.Label();
             this.playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
@@ -68,6 +68,16 @@ namespace PingPongGame
             this.playground.Size = new System.Drawing.Size(1068, 590);
             this.playground.TabIndex = 0;
             this.playground.Paint += new System.Windows.Forms.PaintEventHandler(this.playground_Paint);
+            // 
+            // gameover_lbl
+            // 
+            this.gameover_lbl.AutoSize = true;
+            this.gameover_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gameover_lbl.Location = new System.Drawing.Point(437, 74);
+            this.gameover_lbl.Name = "gameover_lbl";
+            this.gameover_lbl.Size = new System.Drawing.Size(190, 37);
+            this.gameover_lbl.TabIndex = 14;
+            this.gameover_lbl.Text = "Game Over!";
             // 
             // restartButton_lbl
             // 
@@ -127,10 +137,10 @@ namespace PingPongGame
             // 
             // ball
             // 
-            this.ball.BackColor = System.Drawing.Color.Maroon;
+            this.ball.BackColor = System.Drawing.Color.DimGray;
             this.ball.Location = new System.Drawing.Point(172, 180);
             this.ball.Name = "ball";
-            this.ball.Size = new System.Drawing.Size(42, 41);
+            this.ball.Size = new System.Drawing.Size(30, 30);
             this.ball.TabIndex = 2;
             this.ball.TabStop = false;
             this.ball.Click += new System.EventHandler(this.ball_Click);
@@ -196,16 +206,6 @@ namespace PingPongGame
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // gameover_lbl
-            // 
-            this.gameover_lbl.AutoSize = true;
-            this.gameover_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gameover_lbl.Location = new System.Drawing.Point(437, 74);
-            this.gameover_lbl.Name = "gameover_lbl";
-            this.gameover_lbl.Size = new System.Drawing.Size(190, 37);
-            this.gameover_lbl.TabIndex = 14;
-            this.gameover_lbl.Text = "Game Over!";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,7 +227,7 @@ namespace PingPongGame
 
         private System.Windows.Forms.Panel playground;
         private System.Windows.Forms.PictureBox racket;
-        private System.Windows.Forms.PictureBox ball;
+        private OvalPictureBox ball;
         private System.Windows.Forms.Label points_lbl;
         private System.Windows.Forms.Label score_lbl;
         private System.Windows.Forms.Label pause_lbl;

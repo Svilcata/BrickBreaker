@@ -57,3 +57,7 @@ C:\Users\Bobo\Desktop\BrickBreaker\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\
 C:\Users\Bobo\Desktop\BrickBreaker\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.application
 C:\Users\Bobo\Desktop\BrickBreaker\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.exe.manifest
 C:\Users\Bobo\Desktop\BrickBreaker\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.application
+E:\GITHUB\BrickBreaker.git\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.exe.manifest
+E:\GITHUB\BrickBreaker.git\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.application
+E:\GITHUB\BrickBreaker.git\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.exe.manifest
+E:\GITHUB\BrickBreaker.git\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.application
