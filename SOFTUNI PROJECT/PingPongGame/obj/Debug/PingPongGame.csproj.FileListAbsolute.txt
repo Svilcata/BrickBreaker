@@ -61,3 +61,16 @@ E:\GITHUB\BrickBreaker.git\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPong
 E:\GITHUB\BrickBreaker.git\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.application
 E:\GITHUB\BrickBreaker.git\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.exe.manifest
 E:\GITHUB\BrickBreaker.git\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.application
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.exe.config
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.exe
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.pdb
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.exe.manifest
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.application
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.exe
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\bin\Debug\PingPongGame.pdb
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.csprojResolveAssemblyReference.cache
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.Form1.resources
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.Properties.Resources.resources
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.csproj.GenerateResource.Cache
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.exe.manifest
+C:\Users\KDineva\Documents\GitHub\novo\trunk\SOFTUNI PROJECT\PingPongGame\obj\Debug\PingPongGame.application
