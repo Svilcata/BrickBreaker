@@ -36,16 +36,16 @@ namespace PingPongGame
             this.musicButton_lbl = new System.Windows.Forms.Button();
             this.resumeButton_lbl = new System.Windows.Forms.Button();
             this.pause_lbl = new System.Windows.Forms.Label();
-            this.ball = new OvalPictureBox();
             this.racket = new System.Windows.Forms.PictureBox();
             this.points_lbl = new System.Windows.Forms.Label();
             this.score_lbl = new System.Windows.Forms.Label();
             this.musicOn_lbl = new System.Windows.Forms.Label();
             this.musicOff_lbl = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ball = new OvalPictureBox();
             this.playground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             this.SuspendLayout();
             // 
             // playground
@@ -135,16 +135,6 @@ namespace PingPongGame
             this.pause_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.pause_lbl.Click += new System.EventHandler(this.pause_Click);
             // 
-            // ball
-            // 
-            this.ball.BackColor = System.Drawing.Color.DimGray;
-            this.ball.Location = new System.Drawing.Point(172, 180);
-            this.ball.Name = "ball";
-            this.ball.Size = new System.Drawing.Size(30, 30);
-            this.ball.TabIndex = 2;
-            this.ball.TabStop = false;
-            this.ball.Click += new System.EventHandler(this.ball_Click);
-            // 
             // racket
             // 
             this.racket.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -206,6 +196,16 @@ namespace PingPongGame
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // ball
+            // 
+            this.ball.BackColor = System.Drawing.Color.Red;
+            this.ball.Location = new System.Drawing.Point(172, 180);
+            this.ball.Name = "ball";
+            this.ball.Size = new System.Drawing.Size(30, 30);
+            this.ball.TabIndex = 2;
+            this.ball.TabStop = false;
+            this.ball.Click += new System.EventHandler(this.ball_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,8 +217,8 @@ namespace PingPongGame
             this.Load += new System.EventHandler(this.pause_Click);
             this.playground.ResumeLayout(false);
             this.playground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             this.ResumeLayout(false);
 
         }
