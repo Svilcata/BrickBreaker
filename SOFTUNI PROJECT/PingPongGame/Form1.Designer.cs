@@ -29,7 +29,9 @@ namespace PingPongGame
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.playground = new System.Windows.Forms.Panel();
+            this.TheBrick = new System.Windows.Forms.PictureBox();
             this.gameover_lbl = new System.Windows.Forms.Label();
             this.restartButton_lbl = new System.Windows.Forms.Button();
             this.exitButton_lbl = new System.Windows.Forms.Button();
@@ -37,23 +39,27 @@ namespace PingPongGame
             this.resumeButton_lbl = new System.Windows.Forms.Button();
             this.pause_lbl = new System.Windows.Forms.Label();
             this.racket = new System.Windows.Forms.PictureBox();
-            this.brick11 = new System.Windows.Forms.PictureBox();
-            this.brick12 = new System.Windows.Forms.PictureBox();
-            this.brick13 = new System.Windows.Forms.PictureBox();
-            this.brick14 = new System.Windows.Forms.PictureBox();
             this.points_lbl = new System.Windows.Forms.Label();
             this.score_lbl = new System.Windows.Forms.Label();
             this.musicOn_lbl = new System.Windows.Forms.Label();
             this.musicOff_lbl = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ball = new OvalPictureBox();
             this.playground.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TheBrick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             this.SuspendLayout();
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // playground
             // 
+            this.playground.BackColor = System.Drawing.SystemColors.Control;
+            this.playground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.playground.Controls.Add(this.TheBrick);
             this.playground.Controls.Add(this.gameover_lbl);
             this.playground.Controls.Add(this.restartButton_lbl);
             this.playground.Controls.Add(this.exitButton_lbl);
@@ -62,10 +68,6 @@ namespace PingPongGame
             this.playground.Controls.Add(this.pause_lbl);
             this.playground.Controls.Add(this.ball);
             this.playground.Controls.Add(this.racket);
-            this.playground.Controls.Add(this.brick11);
-            this.playground.Controls.Add(this.brick12);
-            this.playground.Controls.Add(this.brick13);
-            this.playground.Controls.Add(this.brick14);
             this.playground.Controls.Add(this.points_lbl);
             this.playground.Controls.Add(this.score_lbl);
             this.playground.Controls.Add(this.musicOn_lbl);
@@ -73,9 +75,20 @@ namespace PingPongGame
             this.playground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.playground.Location = new System.Drawing.Point(0, 0);
             this.playground.Name = "playground";
-            this.playground.Size = new System.Drawing.Size(1068, 590);
+            this.playground.Size = new System.Drawing.Size(1236, 620);
             this.playground.TabIndex = 0;
             this.playground.Paint += new System.Windows.Forms.PaintEventHandler(this.playground_Paint);
+            // 
+            // TheBrick
+            // 
+            this.TheBrick.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TheBrick.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TheBrick.Location = new System.Drawing.Point(250, 100);
+            this.TheBrick.Name = "TheBrick";
+            this.TheBrick.Size = new System.Drawing.Size(120, 40);
+            this.TheBrick.TabIndex = 15;
+            this.TheBrick.TabStop = false;
+            this.TheBrick.Click += new System.EventHandler(this.TheBrick_Click);
             // 
             // gameover_lbl
             // 
@@ -147,7 +160,7 @@ namespace PingPongGame
             // 
             this.racket.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.racket.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.racket.Location = new System.Drawing.Point(415, 558);
+            this.racket.Location = new System.Drawing.Point(499, 588);
             this.racket.Name = "racket";
             this.racket.Size = new System.Drawing.Size(200, 20);
             this.racket.TabIndex = 1;
@@ -199,11 +212,6 @@ namespace PingPongGame
             this.musicOff_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.musicOff_lbl.Click += new System.EventHandler(this.label1_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // ball
             // 
             this.ball.BackColor = System.Drawing.Color.Red;
@@ -218,75 +226,23 @@ namespace PingPongGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 590);
+            this.ClientSize = new System.Drawing.Size(1236, 620);
             this.Controls.Add(this.playground);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.pause_Click);
             this.playground.ResumeLayout(false);
             this.playground.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TheBrick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             this.ResumeLayout(false);
-            //
-            // Brick11
-            //
-            this.brick11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.brick11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.brick11.Location = new System.Drawing.Point(415, 558);
-            this.brick11.Name = "brick11";
-            this.brick11.Size = new System.Drawing.Size(200, 20);
-            this.brick11.TabIndex = 1;
-            this.brick11.TabStop = false;
-            //this.brick11.BringToFront = true;
-            //this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
-            //
-            // Brick12
-            //
-            this.brick12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.brick12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.brick12.Location = new System.Drawing.Point(415, 558);
-            this.brick12.Name = "brick12";
-            this.brick12.Size = new System.Drawing.Size(200, 20);
-            this.brick12.TabIndex = 1;
-            this.brick12.TabStop = false;
-            //this.brick11.BringToFront = true;
-            //this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
-            //
-            // Brick13
-            //
-            this.brick13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.brick13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.brick13.Location = new System.Drawing.Point(415, 558);
-            this.brick13.Name = "brick13";
-            this.brick13.Size = new System.Drawing.Size(200, 20);
-            this.brick13.TabIndex = 1;
-            this.brick13.TabStop = false;
-            //this.brick11.BringToFront = true;
-            //this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
-            //
-            // Brick14
-            //
-            this.brick14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.brick14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.brick14.Location = new System.Drawing.Point(415, 558);
-            this.brick14.Name = "brick14";
-            this.brick14.Size = new System.Drawing.Size(200, 20);
-            this.brick14.TabIndex = 1;
-            this.brick14.TabStop = false;
-            //this.brick11.BringToFront = true;
-            //this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel playground;
         private System.Windows.Forms.PictureBox racket;
-        private System.Windows.Forms.PictureBox brick11;
-        private System.Windows.Forms.PictureBox brick12;
-        private System.Windows.Forms.PictureBox brick13;
-        private System.Windows.Forms.PictureBox brick14;
         private OvalPictureBox ball;
         private System.Windows.Forms.Label points_lbl;
         private System.Windows.Forms.Label score_lbl;
@@ -299,5 +255,7 @@ namespace PingPongGame
         private System.Windows.Forms.Button resumeButton_lbl;
         private System.Windows.Forms.Button restartButton_lbl;
         private System.Windows.Forms.Label gameover_lbl;
+        private System.Windows.Forms.Panel playground;
+        private System.Windows.Forms.PictureBox TheBrick;
     }
 }
