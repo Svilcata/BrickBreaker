@@ -131,19 +131,18 @@ namespace PingPongGame
                 //points += 1;
                 //points_lbl.Text = points.ToString();
             }
-            if (ball.Top <= pictureBox1.Bottom && ball.Left <= pictureBox1.Right&&ball.Right>=pictureBox1.Left)
+            if (pictureBox1.Visible==true&&(ball.Top <= pictureBox1.Bottom && ball.Left <= pictureBox1.Right&&ball.Right>=pictureBox1.Left))
             {
 
                 pictureBox1.Visible = false;
-                pictureBox1.Hide();
-                pictureBox1.Top = playground.Top - (playground.Top - 800);
-                pictureBox1.Left = playground.Left + 1030;
+                
+                
                 speed_top = -speed_top; //change the direction
                 points += 1;
                 //speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
-            else if (ball.Top <= pictureBox2.Bottom && ball.Left <= pictureBox2.Right && ball.Right >= pictureBox2.Left)
+            else if (pictureBox2.Visible==true&&(ball.Top <= pictureBox2.Bottom && ball.Left <= pictureBox2.Right && ball.Right >= pictureBox2.Left))
             {
 
                 pictureBox2.Visible = false;
@@ -155,7 +154,7 @@ namespace PingPongGame
                 //speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
-            else if (ball.Top <= pictureBox3.Bottom && ball.Left <= pictureBox3.Right && ball.Right >= pictureBox3.Left)
+            else if (pictureBox3.Visible==true&&(ball.Top <= pictureBox3.Bottom && ball.Left <= pictureBox3.Right && ball.Right >= pictureBox3.Left))
             {
 
                 pictureBox3.Visible = false;
@@ -167,7 +166,7 @@ namespace PingPongGame
                 //speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
-            else if (ball.Top <= pictureBox4.Bottom && ball.Left <= pictureBox4.Right && ball.Right >= pictureBox4.Left)
+            else if (pictureBox4.Visible == true && (ball.Top <= pictureBox4.Bottom && ball.Left <= pictureBox4.Right && ball.Right >= pictureBox4.Left))
             {
 
                 pictureBox4.Visible = false;
@@ -179,7 +178,7 @@ namespace PingPongGame
                 //speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
-            else if (ball.Top <= pictureBox5.Bottom && ball.Left <= pictureBox5.Right && ball.Right >= pictureBox5.Left)
+            else if (pictureBox5.Visible == true && (ball.Top <= pictureBox5.Bottom && ball.Left <= pictureBox5.Right && ball.Right >= pictureBox5.Left))
             {
 
                 pictureBox5.Visible = false;
@@ -191,7 +190,7 @@ namespace PingPongGame
                 //speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
-            else if (ball.Top <= pictureBox6.Bottom && ball.Left <= pictureBox6.Right && ball.Right >= pictureBox6.Left)
+            else if (pictureBox6.Visible == true && (ball.Top <= pictureBox6.Bottom && ball.Left <= pictureBox6.Right && ball.Right >= pictureBox6.Left))
             {
 
                 pictureBox6.Visible = false;
@@ -203,7 +202,7 @@ namespace PingPongGame
                 //speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
-            else if (ball.Top <= pictureBox7.Bottom && ball.Left <= pictureBox7.Right && ball.Right >= pictureBox7.Left)
+            else if (pictureBox7.Visible == true && (ball.Top <= pictureBox7.Bottom && ball.Left <= pictureBox7.Right && ball.Right >= pictureBox7.Left))
             {
 
                 pictureBox7.Visible = false;
@@ -215,7 +214,7 @@ namespace PingPongGame
                // speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
-            else if (ball.Top <= pictureBox8.Bottom && ball.Left <= pictureBox8.Right && ball.Right >= pictureBox8.Left)
+            else if (pictureBox8.Visible == true && (ball.Top <= pictureBox8.Bottom && ball.Left <= pictureBox8.Right && ball.Right >= pictureBox8.Left))
             {
 
                 pictureBox8.Visible = false;
@@ -227,7 +226,7 @@ namespace PingPongGame
                 //speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
-            else if (ball.Top <= pictureBox9.Bottom && ball.Left <= pictureBox9.Right && ball.Right >= pictureBox9.Left)
+            else if (pictureBox9.Visible == true && (ball.Top <= pictureBox9.Bottom && ball.Left <= pictureBox9.Right && ball.Right >= pictureBox9.Left))
             {
 
                 pictureBox9.Visible = false;
@@ -239,7 +238,7 @@ namespace PingPongGame
                 //speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
-            else if (ball.Top <= pictureBox10.Bottom && ball.Left <= pictureBox10.Right && ball.Right >= pictureBox10.Left)
+            else if (pictureBox10.Visible == true && (ball.Top <= pictureBox10.Bottom && ball.Left <= pictureBox10.Right && ball.Right >= pictureBox10.Left))
             {
 
                 pictureBox10.Visible = false;
