@@ -17,6 +17,7 @@ namespace PingPongGame
 
     public partial class Form1 : Form
     {
+        private const int WIDTH = 500;
 
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         private SoundPlayer _soundPlayer;
@@ -33,12 +34,14 @@ namespace PingPongGame
         #region Body
         public Form1()
         {
+            this.Width = WIDTH;
+            this.MaximizeBox = false; 
             InitializeComponent();
             timer1.Enabled = true;
             Cursor.Hide();
             this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;  //Bring the form to the front
-            this.Bounds = Screen.PrimaryScreen.Bounds;  //Make it fullscreen
+            //this.Bounds = Screen.PrimaryScreen.Bounds;  //Make it fullscreen
             racket.Top = playground.Bottom - (playground.Bottom / 10);  //set the position of the racket
 
 
@@ -46,9 +49,41 @@ namespace PingPongGame
             musicOff_lbl.Left = playground.Right - 110;
             musicOn_lbl.Top = playground.Top - (playground.Top / 10);
             musicOn_lbl.Left = playground.Right - 110;
-
+            
             musicOn_lbl.Visible = false;
             musicOff_lbl.Visible = true;
+            
+            pictureBox1.Top = playground.Top - (playground.Top - 80);
+
+            pictureBox1.Left = playground.Left + 50;
+            pictureBox1.Visible = true;
+            pictureBox2.Top = playground.Top - (playground.Top - 80);
+            pictureBox2.Left = pictureBox1.Left + 130;
+            pictureBox2.Visible = true;
+            pictureBox3.Top = playground.Top - (playground.Top - 80);
+            pictureBox3.Left = pictureBox2.Left + 130; ;
+            pictureBox3.Visible = true;
+            pictureBox4.Top = playground.Top - (playground.Top - 80);
+            pictureBox4.Left = pictureBox3.Left + 130;
+            pictureBox4.Visible = true;
+            pictureBox5.Top = playground.Top - (playground.Top - 80);
+            pictureBox5.Left = pictureBox4.Left + 130;
+            pictureBox5.Visible = true;
+            pictureBox6.Top = playground.Top - (playground.Top - 80);
+            pictureBox6.Left = pictureBox5.Left + 130;
+            pictureBox6.Visible = true;
+            pictureBox7.Top = playground.Top - (playground.Top - 80);
+            pictureBox7.Left = pictureBox6.Left + 130;
+            pictureBox7.Visible = true;
+            pictureBox8.Top = playground.Top - (playground.Top - 80);
+            pictureBox8.Left = pictureBox7.Left + 130;
+            pictureBox8.Visible = true;
+            pictureBox9.Top = playground.Top - (playground.Top - 80);
+            pictureBox9.Left = pictureBox8.Left + 130;
+            pictureBox9.Visible = true;
+            pictureBox10.Top = playground.Top - (playground.Top - 80);
+            pictureBox10.Left = pictureBox9.Left + 130;
+            pictureBox10.Visible = true;
 
             _soundPlayer = new SoundPlayer("background.wav");
 
@@ -93,9 +128,130 @@ namespace PingPongGame
                 speed_top += 0.3;
                 speed_left += 1;
                 speed_top = -speed_top; //change the direction
+                //points += 1;
+                //points_lbl.Text = points.ToString();
+            }
+            if (ball.Top <= pictureBox1.Bottom && ball.Left <= pictureBox1.Right&&ball.Right>=pictureBox1.Left)
+            {
+
+                pictureBox1.Visible = false;
+                pictureBox1.Hide();
+                pictureBox1.Top = playground.Top - (playground.Top - 800);
+                pictureBox1.Left = playground.Left + 1030;
+                speed_top = -speed_top; //change the direction
                 points += 1;
+                //speed_left = -speed_left;
                 points_lbl.Text = points.ToString();
             }
+            else if (ball.Top <= pictureBox2.Bottom && ball.Left <= pictureBox2.Right && ball.Right >= pictureBox2.Left)
+            {
+
+                pictureBox2.Visible = false;
+                pictureBox2.Hide();
+                pictureBox2.Top = playground.Top - (playground.Top - 800);
+                pictureBox2.Left = playground.Left + 1030;
+                speed_top = -speed_top; //change the direction
+                points += 1;
+                //speed_left = -speed_left;
+                points_lbl.Text = points.ToString();
+            }
+            else if (ball.Top <= pictureBox3.Bottom && ball.Left <= pictureBox3.Right && ball.Right >= pictureBox3.Left)
+            {
+
+                pictureBox3.Visible = false;
+                pictureBox3.Hide();
+                pictureBox3.Top = playground.Top - (playground.Top - 8000);
+                pictureBox3.Left = playground.Left + 10030;
+                speed_top = -speed_top; //change the direction
+                points += 1;
+                //speed_left = -speed_left;
+                points_lbl.Text = points.ToString();
+            }
+            else if (ball.Top <= pictureBox4.Bottom && ball.Left <= pictureBox4.Right && ball.Right >= pictureBox4.Left)
+            {
+
+                pictureBox4.Visible = false;
+                pictureBox4.Hide();
+                pictureBox4.Top = playground.Top - (playground.Top - 8000);
+                pictureBox4.Left = playground.Left + 10030;
+                speed_top = -speed_top; //change the direction
+                points += 1;
+                //speed_left = -speed_left;
+                points_lbl.Text = points.ToString();
+            }
+            else if (ball.Top <= pictureBox5.Bottom && ball.Left <= pictureBox5.Right && ball.Right >= pictureBox5.Left)
+            {
+
+                pictureBox5.Visible = false;
+                pictureBox5.Hide();
+                pictureBox5.Top = playground.Top - (playground.Top - 8000);
+                pictureBox5.Left = playground.Left + 10300;
+                speed_top = -speed_top; //change the direction
+                points += 1;
+                //speed_left = -speed_left;
+                points_lbl.Text = points.ToString();
+            }
+            else if (ball.Top <= pictureBox6.Bottom && ball.Left <= pictureBox6.Right && ball.Right >= pictureBox6.Left)
+            {
+
+                pictureBox6.Visible = false;
+                pictureBox6.Hide();
+                pictureBox6.Top = playground.Top - (playground.Top - 8000);
+                pictureBox6.Left = playground.Left + 10030; ;
+                speed_top = -speed_top; //change the direction
+                points += 1;
+                //speed_left = -speed_left;
+                points_lbl.Text = points.ToString();
+            }
+            else if (ball.Top <= pictureBox7.Bottom && ball.Left <= pictureBox7.Right && ball.Right >= pictureBox7.Left)
+            {
+
+                pictureBox7.Visible = false;
+                pictureBox7.Hide();
+                pictureBox7.Top = playground.Top - (playground.Top - 8000);
+                pictureBox7.Left = playground.Left + 10300;
+                speed_top = -speed_top; //change the direction
+                points += 1;
+               // speed_left = -speed_left;
+                points_lbl.Text = points.ToString();
+            }
+            else if (ball.Top <= pictureBox8.Bottom && ball.Left <= pictureBox8.Right && ball.Right >= pictureBox8.Left)
+            {
+
+                pictureBox8.Visible = false;
+                pictureBox8.Hide();
+                pictureBox8.Top = playground.Top - (playground.Top - 8000);
+                pictureBox8.Left = playground.Left + 10300;
+                speed_top = -speed_top; //change the direction
+                points += 1;
+                //speed_left = -speed_left;
+                points_lbl.Text = points.ToString();
+            }
+            else if (ball.Top <= pictureBox9.Bottom && ball.Left <= pictureBox9.Right && ball.Right >= pictureBox9.Left)
+            {
+
+                pictureBox9.Visible = false;
+                pictureBox9.Hide();
+                pictureBox9.Top = playground.Top - (playground.Top - 8000);
+                pictureBox9.Left = playground.Left + 10030;
+                speed_top = -speed_top; //change the direction
+                points += 1;
+                //speed_left = -speed_left;
+                points_lbl.Text = points.ToString();
+            }
+            else if (ball.Top <= pictureBox10.Bottom && ball.Left <= pictureBox10.Right && ball.Right >= pictureBox10.Left)
+            {
+
+                pictureBox10.Visible = false;
+                pictureBox10.Hide();
+                pictureBox10.Top = playground.Top - (playground.Top - 8000);
+                pictureBox10.Left = playground.Left + 10300;
+                speed_top = -speed_top; //change the direction
+                points += 1;
+               // speed_left = -speed_left;
+                points_lbl.Text = points.ToString();
+            }
+           
 
             if (ball.Left <= playground.Left)
             {
@@ -120,19 +276,11 @@ namespace PingPongGame
                 musicButton_lbl.Show();
                 _soundPlayer.Stop();
             }
-            IsHittingABrick();
+            
 
         }
 
-        private void IsHittingABrick()
-        {
-            Dictionary<string, int> brickLives = new Dictionary<string, int>();
-            brickLives.Add("Brick1", 1);
-            brickLives.Add("Brick2", 1);
-            brickLives.Add("Brick3", 1);
-            brickLives.Add("Brick4", 1);
-            brickLives.Add("Brick5", 1);
-        }
+       
 
 
         #endregion
@@ -342,6 +490,16 @@ namespace PingPongGame
         }
 
         private void TheBrick_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gameover_lbl_Click(object sender, EventArgs e)
         {
 
         }
