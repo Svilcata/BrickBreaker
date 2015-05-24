@@ -32,27 +32,8 @@ namespace PingPongGame
 
 
         #region Body
-        public Form1()
+        public void InitializeBricks()
         {
-            this.Width = WIDTH;
-            this.MaximizeBox = false; 
-            InitializeComponent();
-            timer1.Enabled = true;
-            Cursor.Hide();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.TopMost = true;  //Bring the form to the front
-            //this.Bounds = Screen.PrimaryScreen.Bounds;  //Make it fullscreen
-            racket.Top = playground.Bottom - (playground.Bottom / 10);  //set the position of the racket
-
-
-            musicOff_lbl.Top = playground.Top - (playground.Top / 10);
-            musicOff_lbl.Left = playground.Right - 110;
-            musicOn_lbl.Top = playground.Top - (playground.Top / 10);
-            musicOn_lbl.Left = playground.Right - 110;
-            
-            musicOn_lbl.Visible = false;
-            musicOff_lbl.Visible = true;
-            
             pictureBox1.Top = playground.Top - (playground.Top - 80);
 
             pictureBox1.Left = playground.Left + 50;
@@ -84,6 +65,29 @@ namespace PingPongGame
             pictureBox10.Top = playground.Top - (playground.Top - 80);
             pictureBox10.Left = pictureBox9.Left + 130;
             pictureBox10.Visible = true;
+        }
+        public Form1()
+        {
+            this.Width = WIDTH;
+            this.MaximizeBox = false; 
+            InitializeComponent();
+            timer1.Enabled = true;
+            Cursor.Hide();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.TopMost = true;  //Bring the form to the front
+            //this.Bounds = Screen.PrimaryScreen.Bounds;  //Make it fullscreen
+            racket.Top = playground.Bottom - (playground.Bottom / 10);  //set the position of the racket
+
+
+            musicOff_lbl.Top = playground.Top - (playground.Top / 10);
+            musicOff_lbl.Left = playground.Right - 110;
+            musicOn_lbl.Top = playground.Top - (playground.Top / 10);
+            musicOn_lbl.Left = playground.Right - 110;
+            
+            musicOn_lbl.Visible = false;
+            musicOff_lbl.Visible = true;
+
+            InitializeBricks();
 
             _soundPlayer = new SoundPlayer("background.wav");
 
@@ -455,6 +459,7 @@ namespace PingPongGame
         private void restartButton_lbl_Click(object sender, EventArgs e) //Restart button
         {
             Cursor.Hide();
+            InitializeBricks();
             CursorcoordinаteY = Cursor.Position.Y;
             Point pt = new Point(PadcoordinаteX, CursorcoordinаteY);
             ball.Top = RandomGenerator(50, 200);
