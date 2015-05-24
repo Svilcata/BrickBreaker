@@ -58,7 +58,7 @@ namespace PingPongGame
             // playground
             // 
             this.playground.BackColor = System.Drawing.SystemColors.Control;
-            this.playground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.playground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.playground.Controls.Add(this.TheBrick);
             this.playground.Controls.Add(this.gameover_lbl);
             this.playground.Controls.Add(this.restartButton_lbl);
@@ -215,6 +215,7 @@ namespace PingPongGame
             // ball
             // 
             this.ball.BackColor = System.Drawing.Color.Red;
+            this.ball.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ball.Location = new System.Drawing.Point(172, 180);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(30, 30);
