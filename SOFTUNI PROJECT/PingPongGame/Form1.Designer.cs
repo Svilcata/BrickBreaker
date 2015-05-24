@@ -216,6 +216,7 @@ namespace PingPongGame
             // 
             this.ball.BackColor = System.Drawing.Color.Red;
             this.ball.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ball.ErrorImage = null;
             this.ball.Location = new System.Drawing.Point(172, 180);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(30, 30);
