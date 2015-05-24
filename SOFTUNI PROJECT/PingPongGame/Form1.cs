@@ -110,7 +110,7 @@ namespace PingPongGame
             {
                 speed_top = -speed_top;
             }
-            if (ball.Top >= playground.Bottom && ball.Bottom <= TheBrick.Bottom && ball.Right >= TheBrick.Left && ball.Left <= TheBrick.Right)
+            if (ball.Top >= playground.Bottom)
             {
                 timer1.Enabled = false;       //ball is out -> Game over!
                 Cursor.Show();
@@ -120,7 +120,18 @@ namespace PingPongGame
                 musicButton_lbl.Show();
                 _soundPlayer.Stop();
             }
+            IsHittingABrick();
 
+        }
+
+        private void IsHittingABrick()
+        {
+            Dictionary<string, int> brickLives = new Dictionary<string, int>();
+            brickLives.Add("Brick1", 1);
+            brickLives.Add("Brick2", 1);
+            brickLives.Add("Brick3", 1);
+            brickLives.Add("Brick4", 1);
+            brickLives.Add("Brick5", 1);
         }
 
 
@@ -148,7 +159,7 @@ namespace PingPongGame
                     musicButton_lbl.Visible = true;
                     exitButton_lbl.Visible = true;
                 }
-                
+
             }
 
 
