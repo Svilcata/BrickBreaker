@@ -110,7 +110,7 @@ namespace PingPongGame
             {
                 speed_top = -speed_top;
             }
-            if (ball.Top >= playground.Bottom)
+            if (ball.Top >= playground.Bottom && ball.Bottom <= TheBrick.Bottom && ball.Right >= TheBrick.Left && ball.Left <= TheBrick.Right)
             {
                 timer1.Enabled = false;       //ball is out -> Game over!
                 Cursor.Show();
@@ -120,10 +120,10 @@ namespace PingPongGame
                 musicButton_lbl.Show();
                 _soundPlayer.Stop();
             }
-          
+
         }
 
-  
+
         #endregion
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -148,6 +148,7 @@ namespace PingPongGame
                     musicButton_lbl.Visible = true;
                     exitButton_lbl.Visible = true;
                 }
+                
             }
 
 
