@@ -19,6 +19,7 @@ namespace PingPongGame
     {
         private const int WIDTH = 500;
 
+        public int maxSpeed = 12;
         public static SpeechSynthesizer synth = new SpeechSynthesizer(); //synth.Speak("type message here");
         private SoundPlayer _soundPlayer;
         public int level = 1;
@@ -201,18 +202,53 @@ namespace PingPongGame
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            int midOfRacket = racket.Letf + racket.Width / 2;
             racket.Left = Cursor.Position.X - (racket.Width / 2); //Set the center of the racket to the position of the cursor
             ball.Left += (int)speed_left;
             ball.Top += (int)speed_top;
             if (ball.Bottom >= racket.Top && ball.Bottom <= racket.Bottom && ball.Right >= racket.Left && ball.Left <= racket.Right)
             {
-                speed_top += 0.3;
-                speed_left += 1;
-                speed_top = -speed_top; //change the direction
-
-                Random r = new Random();
-                playground.BackColor = Color.FromArgb(r.Next(150, 255), r.Next(150, 255), r.Next(150, 255));
+                if (speed_left <= maxSpeed && speed_top <= maxSpeed)
+                {
+                    if (ball.Right <= midOfRacket && speed_left > 0)
+                    {
+                        speed_top += 1;
+                        speed_left += 2;
+                        speed_top = -speed_top;
+                        points += 1;
+                        points_lbl.Text = points.ToString();
+                    }
+                    if (ball.Right <= midOfRacket && speed_left < 0)
+                    {
+                        speed_top += 1;
+                        speed_left += 0;
+                        speed_top = -speed_top;
+                        points += 1;
+                        points_lbl.Text = points.ToString();
+                    }
+                    if (ball.Right >= midOfRacket && speed_left > 0)
+                    {
+                        speed_top += 1;
+                        speed_left += 0;
+                        speed_top = -speed_top;
+                        points += 1;
+                        points_lbl.Text = points.ToString();
+                    }
+                    if (ball.Right >= midOfRacket && speed_left < 0)
+                    {
+                        speed_top += 1;
+                        speed_left -= 2;
+                        speed_top = -speed_top; //change the direction
+                        points += 1;
+                        points_lbl.Text = points.ToString();
+                    }
+                }
+                else
+                {
+                    speed_top = -speed_top; //change the direction
+                    points += 1;
+                    points_lbl.Text = points.ToString();
+                }
             }
             if (pictureBox1.Visible==true&&(ball.Top <= pictureBox1.Bottom && ball.Left <= pictureBox1.Right&&ball.Right>=pictureBox1.Left))
             {
