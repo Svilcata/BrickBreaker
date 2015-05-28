@@ -73,19 +73,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Playground.cs">
+    <Compile Include="Playground1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Playground.Designer.cs">
-      <DependentUpon>Playground.cs</DependentUpon>
+    <Compile Include="Playground1.Designer.cs">
+      <DependentUpon>Playground1.cs</DependentUpon>
     </Compile>
     <Compile Include="OvalPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Playground.resx">
-      <DependentUpon>Playground.cs</DependentUpon>
+    <EmbeddedResource Include="Playground1.resx">
+      <DependentUpon>Playground1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
